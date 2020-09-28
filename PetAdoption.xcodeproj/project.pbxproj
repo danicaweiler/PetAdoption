@@ -15,6 +15,8 @@
 		27B6CBA625223E31008A9045 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27B6CBA425223E31008A9045 /* LaunchScreen.storyboard */; };
 		27B6CBB125223E31008A9045 /* PetAdoptionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B6CBB025223E31008A9045 /* PetAdoptionTests.swift */; };
 		27B6CBBC25223E31008A9045 /* PetAdoptionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B6CBBB25223E31008A9045 /* PetAdoptionUITests.swift */; };
+		27B6CBCA25223FB6008A9045 /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B6CBC925223FB6008A9045 /* SearchResultViewController.swift */; };
+		27B6CBCC2522404D008A9045 /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B6CBCB2522404D008A9045 /* Pet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		27B6CBB725223E31008A9045 /* PetAdoptionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PetAdoptionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		27B6CBBB25223E31008A9045 /* PetAdoptionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetAdoptionUITests.swift; sourceTree = "<group>"; };
 		27B6CBBD25223E31008A9045 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		27B6CBC925223FB6008A9045 /* SearchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
+		27B6CBCB2522404D008A9045 /* Pet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,8 @@
 				27B6CBA225223E31008A9045 /* Assets.xcassets */,
 				27B6CBA425223E31008A9045 /* LaunchScreen.storyboard */,
 				27B6CBA725223E31008A9045 /* Info.plist */,
+				27B6CBC925223FB6008A9045 /* SearchResultViewController.swift */,
+				27B6CBCB2522404D008A9045 /* Pet.swift */,
 			);
 			path = PetAdoption;
 			sourceTree = "<group>";
@@ -259,8 +265,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27B6CBCC2522404D008A9045 /* Pet.swift in Sources */,
 				27B6CB9E25223E2F008A9045 /* ViewController.swift in Sources */,
 				27B6CB9A25223E2F008A9045 /* AppDelegate.swift in Sources */,
+				27B6CBCA25223FB6008A9045 /* SearchResultViewController.swift in Sources */,
 				27B6CB9C25223E2F008A9045 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -17,6 +17,7 @@
 		27B6CBBC25223E31008A9045 /* PetAdoptionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B6CBBB25223E31008A9045 /* PetAdoptionUITests.swift */; };
 		27B6CBCA25223FB6008A9045 /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B6CBC925223FB6008A9045 /* SearchResultViewController.swift */; };
 		27B6CBCC2522404D008A9045 /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B6CBCB2522404D008A9045 /* Pet.swift */; };
+		27CD24B12523813F0031A594 /* PetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CD24B02523813F0031A594 /* PetTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		27B6CBBD25223E31008A9045 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		27B6CBC925223FB6008A9045 /* SearchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
 		27B6CBCB2522404D008A9045 /* Pet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
+		27CD24B02523813F0031A594 /* PetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,15 +105,13 @@
 		27B6CB9825223E2F008A9045 /* PetAdoption */ = {
 			isa = PBXGroup;
 			children = (
+				27CD24B525238DF90031A594 /* Model */,
+				27CD24B425238DE60031A594 /* Controller */,
+				27CD24B325238DD60031A594 /* View */,
 				27B6CB9925223E2F008A9045 /* AppDelegate.swift */,
 				27B6CB9B25223E2F008A9045 /* SceneDelegate.swift */,
-				27B6CB9D25223E2F008A9045 /* ViewController.swift */,
-				27B6CB9F25223E2F008A9045 /* Main.storyboard */,
 				27B6CBA225223E31008A9045 /* Assets.xcassets */,
-				27B6CBA425223E31008A9045 /* LaunchScreen.storyboard */,
 				27B6CBA725223E31008A9045 /* Info.plist */,
-				27B6CBC925223FB6008A9045 /* SearchResultViewController.swift */,
-				27B6CBCB2522404D008A9045 /* Pet.swift */,
 			);
 			path = PetAdoption;
 			sourceTree = "<group>";
@@ -132,6 +132,33 @@
 				27B6CBBD25223E31008A9045 /* Info.plist */,
 			);
 			path = PetAdoptionUITests;
+			sourceTree = "<group>";
+		};
+		27CD24B325238DD60031A594 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				27B6CB9F25223E2F008A9045 /* Main.storyboard */,
+				27B6CBA425223E31008A9045 /* LaunchScreen.storyboard */,
+				27CD24B02523813F0031A594 /* PetTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		27CD24B425238DE60031A594 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				27B6CB9D25223E2F008A9045 /* ViewController.swift */,
+				27B6CBC925223FB6008A9045 /* SearchResultViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		27CD24B525238DF90031A594 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				27B6CBCB2522404D008A9045 /* Pet.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,6 +293,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				27B6CBCC2522404D008A9045 /* Pet.swift in Sources */,
+				27CD24B12523813F0031A594 /* PetTableViewCell.swift in Sources */,
 				27B6CB9E25223E2F008A9045 /* ViewController.swift in Sources */,
 				27B6CB9A25223E2F008A9045 /* AppDelegate.swift in Sources */,
 				27B6CBCA25223FB6008A9045 /* SearchResultViewController.swift in Sources */,

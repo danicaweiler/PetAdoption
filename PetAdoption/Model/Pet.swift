@@ -7,8 +7,9 @@
 //
 
 import Foundation
+import UIKit
 
-class Pet {
+public class Pet {
     var name: String
     var breed: String?
     var age: Int

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WP7-y7-rR6">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Search-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PetAdoption" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="SearchViewController" customModule="PetAdoption" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -27,21 +27,22 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="oGf-2p-tx7"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="95.758928571428569"/>
+            <point key="canvasLocation" x="1047.8260869565217" y="95.758928571428569"/>
         </scene>
-        <!--Search Result View Controller-->
+        <!--Results-->
         <scene sceneID="DQa-FK-33N">
             <objects>
                 <viewController id="znT-E7-Gjq" customClass="SearchResultViewController" customModule="PetAdoption" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jlc-S5-clC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="175" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Knp-la-lSu">
-                                <rect key="frame" x="20" y="10" width="374" height="812"/>
+                                <rect key="frame" x="20" y="54" width="374" height="742"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="6" indentationWidth="0.0" reuseIdentifier="petCell" id="8ni-Ru-kJD" customClass="PetTableViewCell" customModule="PetAdoption" customModuleProvider="target">
@@ -100,13 +101,14 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="Knp-la-lSu" secondAttribute="bottom" constant="20" id="2TQ-j2-kUI"/>
+                            <constraint firstAttribute="bottom" secondItem="Knp-la-lSu" secondAttribute="bottom" constant="100" id="2TQ-j2-kUI"/>
                             <constraint firstItem="Wip-TW-7W2" firstAttribute="trailing" secondItem="Knp-la-lSu" secondAttribute="trailing" constant="20" id="DZh-rQ-fRv"/>
                             <constraint firstItem="Knp-la-lSu" firstAttribute="leading" secondItem="Wip-TW-7W2" secondAttribute="leading" constant="20" id="hnk-K6-4Ot"/>
                             <constraint firstItem="Knp-la-lSu" firstAttribute="top" secondItem="Wip-TW-7W2" secondAttribute="top" constant="10" id="tTo-qA-Dxz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Wip-TW-7W2"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Results" image="star" catalog="system" id="EhZ-NT-joF"/>
                     <navigationItem key="navigationItem" id="kIA-vh-s6h"/>
                     <connections>
                         <outlet property="resultTableView" destination="Knp-la-lSu" id="FkL-pi-VNq"/>
@@ -114,7 +116,50 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tnP-nW-f2B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="882.60869565217399" y="95.758928571428569"/>
+            <point key="canvasLocation" x="1792.753623188406" y="95.758928571428569"/>
+        </scene>
+        <!--Pet-->
+        <scene sceneID="luK-4V-iJX">
+            <objects>
+                <viewController id="g0R-Jr-mr5" customClass="PetDetailViewController" customModule="PetAdoption" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2uj-58-ZYC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="gIF-iu-Mwc"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Pet" image="heart" catalog="system" id="O7M-7c-y2J"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9od-f7-f67" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2529" y="96"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="k1r-WK-LZk">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="WP7-y7-rR6" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dXO-Lk-DUi">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="vSc-Yu-7Yb"/>
+                        <segue destination="znT-E7-Gjq" kind="relationship" relationship="viewControllers" id="R5O-Vk-ez9"/>
+                        <segue destination="g0R-Jr-mr5" kind="relationship" relationship="viewControllers" id="2js-TM-R3M"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QTO-Qs-kdX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="95.758928571428569"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="R5O-Vk-ez9"/>
+    </inferredMetricsTieBreakers>
+    <resources>
+        <image name="heart" catalog="system" width="128" height="109"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="star" catalog="system" width="128" height="116"/>
+    </resources>
 </document>

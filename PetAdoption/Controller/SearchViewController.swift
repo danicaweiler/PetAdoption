@@ -9,7 +9,7 @@
 import UIKit
 import Foundation
 
-class ViewController: UIViewController {
+class SearchViewController: UIViewController {
 
     
     override func viewDidLoad() {

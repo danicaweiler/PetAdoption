@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+//Base class for defining what a pet is for now
 public class Pet {
     var name: String
     var breed: String?
@@ -29,12 +30,14 @@ public class Pet {
     }
 }
 
+//Define acceptable pet types
 enum PetType {
     case dog
     case cat
     case smallAnimal
 }
 
+//Define accceptable sizes
 enum PetSize {
     case small
     case medium

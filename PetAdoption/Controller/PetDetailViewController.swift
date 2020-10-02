@@ -2,7 +2,7 @@
 //  PetDetailViewController.swift
 //  PetAdoption
 //  Author Maja Vrebac
-//  The page shows the prfile page for the pet
+//  The page shows the profile page for the pet
 
 import UIKit
 
@@ -22,21 +22,9 @@ class PetDetailViewController: UIViewController {
         let petIconImage = UIImage(named:"dog-icon")
              petImageView?.image = petIconImage ?? UIImage()
         petNameLabel.text = "Hi my name is Buddy!"
-        petTraitsLabel.text = "Male | Age:3 | Breed:Pomeranian"
+        petTraitsLabel.text = "Male | Age: 3 | Breed: Pomeranian"
         petDescLabel.text = "Buddy is very playful and loves to chase his ball. He also loves to cuddle"
         
         
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

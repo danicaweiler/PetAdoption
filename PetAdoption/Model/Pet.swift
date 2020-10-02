@@ -2,7 +2,7 @@
 //  Pet.swift
 //  PetAdoption
 //
-//  Created by user182198 on 9/28/20.
+//  Created by user182198 (Danica) on 9/28/20.
 //  Copyright © 2020 Conestoga. All rights reserved.
 //
 

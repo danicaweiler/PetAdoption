@@ -15,6 +15,9 @@ class SearchResultViewController: UIViewController, UITableViewDataSource, UITab
     //Array of pets for table
     internal var pets: [Pet] = []
     
+    // FUNCTION : viewDidLoad
+    // PARAMETERS : None
+    // RETURNS : void
     override func viewDidLoad() {
         super.viewDidLoad()
         //Temporary hard coded pets
@@ -30,11 +33,20 @@ class SearchResultViewController: UIViewController, UITableViewDataSource, UITab
         resultTableView.rowHeight = UITableView.automaticDimension
     }
     
-    //Populate tableview code for custom cells
+    // FUNCTION : updateUI
+    // DESCRIPTION : Set the table cell labels, according to the pet
+    // PARAMETERS : None
+    // RETURNS : void
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return pets.count
     }
     
+    // FUNCTION : tableView
+    // DESCRIPTION : assign the pet to the tableview cell
+    // PARAMETERS :
+    //  tableView: UITableView - table view cell is in
+    //  cellForRowAt indexPath: IndexPath - index of cell
+    // RETURNS : UITableViewCell
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "petCell", for: indexPath as IndexPath) as! PetTableViewCell
         

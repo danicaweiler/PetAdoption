@@ -20,6 +20,10 @@ public class PetTableViewCell: UITableViewCell {
         }
     }
     
+    // FUNCTION : updateUI
+    // DESCRIPTION : Set the table cell labels, according to the pet
+    // PARAMETERS : None
+    // RETURNS : void
     private func updateUI() {
         let petIconImage = UIImage(named:"dog-icon")
         petImage?.image = petIconImage ?? UIImage()

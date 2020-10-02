@@ -9,7 +9,8 @@
 import Foundation
 import UIKit
 
-//Base class for defining what a pet is for now
+// Class: Pet
+// Base class for defining what a pet is for now
 public class Pet {
     var name: String
     var breed: String?

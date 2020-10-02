@@ -14,7 +14,9 @@ class PetDetailViewController: UIViewController {
     @IBOutlet weak var petTraitsLabel: UILabel!
     @IBOutlet weak var petDescLabel: UILabel!
     
-    
+    // FUNCTION : viewDidLoad
+    // PARAMETERS : None
+    // RETURNS : void
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,7 +26,6 @@ class PetDetailViewController: UIViewController {
         petNameLabel.text = "Hi my name is Buddy!"
         petTraitsLabel.text = "Male | Age: 3 | Breed: Pomeranian"
         petDescLabel.text = "Buddy is very playful and loves to chase his ball. He also loves to cuddle"
-        
         
     }
 }

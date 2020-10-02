@@ -14,6 +14,7 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var locationSearchBar: UISearchBar!
     @IBOutlet weak var petType: UISegmentedControl!
     @IBOutlet weak var petPreviewView: UIImageView!
+    
     @IBAction func searchPet(_ sender: Any) {
     }
     
@@ -21,6 +22,9 @@ class SearchViewController: UIViewController {
         locationSearchBar.resignFirstResponder()
     }
     
+    // FUNCTION : viewDidLoad
+    // PARAMETERS : None
+    // RETURNS : void
     override func viewDidLoad() {
         super.viewDidLoad()
         

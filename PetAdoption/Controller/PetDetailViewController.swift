@@ -1,10 +1,8 @@
 //
 //  PetDetailViewController.swift
 //  PetAdoption
-//
-//  Created by user182198 on 9/30/20.
-//  Copyright © 2020 Conestoga. All rights reserved.
-//
+//  Author Maja Vrebac
+//  The page shows the prfile page for the pet
 
 import UIKit
 
@@ -20,6 +18,7 @@ class PetDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        //Temp hardcoded pet information 
         let petIconImage = UIImage(named:"dog-icon")
              petImageView?.image = petIconImage ?? UIImage()
         petNameLabel.text = "Hi my name is Buddy!"

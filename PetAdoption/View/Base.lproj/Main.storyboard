@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WP7-y7-rR6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WP7-y7-rR6">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -15,21 +17,62 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OYF-ol-qmP">
-                                <rect key="frame" x="163" y="314" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                            <searchBar contentMode="redraw" placeholder="Location" translatesAutoresizingMaskIntoConstraints="NO" id="YUd-zn-5cT">
+                                <rect key="frame" x="20" y="58" width="374" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="DqD-wj-EGC">
+                                <rect key="frame" x="20" y="128" width="374" height="32"/>
+                                <segments>
+                                    <segment title="Dogs"/>
+                                    <segment title="Cats"/>
+                                    <segment title="Small Animals"/>
+                                </segments>
+                            </segmentedControl>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lrt-k9-N4s">
+                                <rect key="frame" x="45" y="320" width="325" height="276"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OYF-ol-qmP">
+                                <rect key="frame" x="326" y="173" width="48" height="30"/>
+                                <state key="normal" title="Search"/>
                                 <connections>
+                                    <action selector="searchPet:" destination="BYZ-38-t0r" eventType="touchUpInside" id="H2l-Ej-exa"/>
                                     <segue destination="znT-E7-Gjq" kind="showDetail" id="jrs-3m-RrT"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="lrt-k9-N4s" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="1Nl-dE-SP5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DqD-wj-EGC" secondAttribute="trailing" constant="20" id="Ab5-PB-hRo"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OYF-ol-qmP" secondAttribute="trailing" constant="40" id="F1i-u9-HZ8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YUd-zn-5cT" secondAttribute="trailing" constant="20" id="LZP-Co-ouU"/>
+                            <constraint firstItem="DqD-wj-EGC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Xna-Si-Iqn"/>
+                            <constraint firstItem="OYF-ol-qmP" firstAttribute="top" secondItem="DqD-wj-EGC" secondAttribute="bottom" constant="14" id="drc-DK-bFH"/>
+                            <constraint firstItem="lrt-k9-N4s" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nCu-Xh-MUe"/>
+                            <constraint firstItem="DqD-wj-EGC" firstAttribute="top" secondItem="YUd-zn-5cT" secondAttribute="bottom" constant="14" id="r8u-rJ-D8e"/>
+                            <constraint firstItem="YUd-zn-5cT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="14" id="wgs-js-yCk"/>
+                            <constraint firstItem="YUd-zn-5cT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="ydo-3v-B76"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="9Ln-yk-Kkf" appends="YES" id="8lU-hn-GZ1"/>
+                        </connections>
                     </view>
                     <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="oGf-2p-tx7"/>
+                    <connections>
+                        <outlet property="locationSearchBar" destination="YUd-zn-5cT" id="uCX-6B-ufo"/>
+                        <outlet property="petPreviewView" destination="lrt-k9-N4s" id="F4F-V9-c1D"/>
+                        <outlet property="petType" destination="DqD-wj-EGC" id="nQJ-up-bXJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="9Ln-yk-Kkf">
+                    <connections>
+                        <action selector="dismissKeyboard:" destination="BYZ-38-t0r" id="eHQ-UN-Bf3"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="95.758928571428569"/>
         </scene>
@@ -38,12 +81,12 @@
             <objects>
                 <viewController id="znT-E7-Gjq" customClass="SearchResultViewController" customModule="PetAdoption" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jlc-S5-clC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="175" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Knp-la-lSu">
-                                <rect key="frame" x="20" y="54" width="374" height="742"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <rect key="frame" x="20" y="10" width="374" height="732"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="6" indentationWidth="0.0" reuseIdentifier="petCell" id="8ni-Ru-kJD" customClass="PetTableViewCell" customModule="PetAdoption" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="374" height="175"/>
@@ -99,14 +142,14 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Wip-TW-7W2"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="Knp-la-lSu" secondAttribute="bottom" constant="100" id="2TQ-j2-kUI"/>
                             <constraint firstItem="Wip-TW-7W2" firstAttribute="trailing" secondItem="Knp-la-lSu" secondAttribute="trailing" constant="20" id="DZh-rQ-fRv"/>
                             <constraint firstItem="Knp-la-lSu" firstAttribute="leading" secondItem="Wip-TW-7W2" secondAttribute="leading" constant="20" id="hnk-K6-4Ot"/>
                             <constraint firstItem="Knp-la-lSu" firstAttribute="top" secondItem="Wip-TW-7W2" secondAttribute="top" constant="10" id="tTo-qA-Dxz"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Wip-TW-7W2"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Results" image="star" catalog="system" id="EhZ-NT-joF"/>
                     <navigationItem key="navigationItem" id="kIA-vh-s6h"/>
@@ -151,7 +194,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="gIF-iu-Mwc"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="jXu-Gi-NMP" firstAttribute="trailing" secondItem="cEe-Mj-Fqh" secondAttribute="trailing" id="26m-OV-ChP"/>
                             <constraint firstItem="IwO-ey-PSD" firstAttribute="leading" secondItem="gIF-iu-Mwc" secondAttribute="leading" constant="50" id="2CM-TF-SyU"/>
@@ -166,7 +210,6 @@
                             <constraint firstItem="IwO-ey-PSD" firstAttribute="trailing" secondItem="jXu-Gi-NMP" secondAttribute="trailing" id="u7E-4d-51G"/>
                             <constraint firstItem="jXu-Gi-NMP" firstAttribute="leading" secondItem="cEe-Mj-Fqh" secondAttribute="leading" id="uY1-8a-664"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="gIF-iu-Mwc"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Pet" image="heart" catalog="system" id="O7M-7c-y2J"/>
                     <connections>
@@ -203,11 +246,14 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="R5O-Vk-ez9"/>
+        <segue reference="jrs-3m-RrT"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="heart" catalog="system" width="128" height="109"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="star" catalog="system" width="128" height="116"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

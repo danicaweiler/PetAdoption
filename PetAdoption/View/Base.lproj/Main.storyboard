@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WP7-y7-rR6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WP7-y7-rR6">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -29,10 +27,10 @@
                                     <segment title="Small Animals"/>
                                 </segments>
                             </segmentedControl>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lrt-k9-N4s">
-                                <rect key="frame" x="45" y="320" width="325" height="276"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lrt-k9-N4s">
+                                <rect key="frame" x="45" y="300" width="324" height="296"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OYF-ol-qmP">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OYF-ol-qmP">
                                 <rect key="frame" x="326" y="173" width="48" height="30"/>
                                 <state key="normal" title="Search"/>
                                 <connections>
@@ -41,12 +39,13 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="lrt-k9-N4s" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="1Nl-dE-SP5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="lrt-k9-N4s" secondAttribute="bottom" constant="217" id="2WZ-ll-Brk"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DqD-wj-EGC" secondAttribute="trailing" constant="20" id="Ab5-PB-hRo"/>
+                            <constraint firstItem="lrt-k9-N4s" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="45" id="DT3-Hg-lxF"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OYF-ol-qmP" secondAttribute="trailing" constant="40" id="F1i-u9-HZ8"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YUd-zn-5cT" secondAttribute="trailing" constant="20" id="LZP-Co-ouU"/>
                             <constraint firstItem="DqD-wj-EGC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Xna-Si-Iqn"/>
@@ -56,6 +55,7 @@
                             <constraint firstItem="YUd-zn-5cT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="14" id="wgs-js-yCk"/>
                             <constraint firstItem="YUd-zn-5cT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="ydo-3v-B76"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="9Ln-yk-Kkf" appends="YES" id="8lU-hn-GZ1"/>
                         </connections>
@@ -86,7 +86,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="175" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Knp-la-lSu">
                                 <rect key="frame" x="20" y="10" width="374" height="732"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="6" indentationWidth="0.0" reuseIdentifier="petCell" id="8ni-Ru-kJD" customClass="PetTableViewCell" customModule="PetAdoption" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="374" height="175"/>
@@ -142,14 +142,14 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="Wip-TW-7W2"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="Knp-la-lSu" secondAttribute="bottom" constant="100" id="2TQ-j2-kUI"/>
                             <constraint firstItem="Wip-TW-7W2" firstAttribute="trailing" secondItem="Knp-la-lSu" secondAttribute="trailing" constant="20" id="DZh-rQ-fRv"/>
                             <constraint firstItem="Knp-la-lSu" firstAttribute="leading" secondItem="Wip-TW-7W2" secondAttribute="leading" constant="20" id="hnk-K6-4Ot"/>
                             <constraint firstItem="Knp-la-lSu" firstAttribute="top" secondItem="Wip-TW-7W2" secondAttribute="top" constant="10" id="tTo-qA-Dxz"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="Wip-TW-7W2"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Results" image="star" catalog="system" id="EhZ-NT-joF"/>
                     <navigationItem key="navigationItem" id="kIA-vh-s6h"/>
@@ -194,8 +194,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="gIF-iu-Mwc"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="jXu-Gi-NMP" firstAttribute="trailing" secondItem="cEe-Mj-Fqh" secondAttribute="trailing" id="26m-OV-ChP"/>
                             <constraint firstItem="IwO-ey-PSD" firstAttribute="leading" secondItem="gIF-iu-Mwc" secondAttribute="leading" constant="50" id="2CM-TF-SyU"/>
@@ -210,6 +209,7 @@
                             <constraint firstItem="IwO-ey-PSD" firstAttribute="trailing" secondItem="jXu-Gi-NMP" secondAttribute="trailing" id="u7E-4d-51G"/>
                             <constraint firstItem="jXu-Gi-NMP" firstAttribute="leading" secondItem="cEe-Mj-Fqh" secondAttribute="leading" id="uY1-8a-664"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="gIF-iu-Mwc"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Pet" image="heart" catalog="system" id="O7M-7c-y2J"/>
                     <connections>
@@ -252,8 +252,5 @@
         <image name="heart" catalog="system" width="128" height="109"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="star" catalog="system" width="128" height="116"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

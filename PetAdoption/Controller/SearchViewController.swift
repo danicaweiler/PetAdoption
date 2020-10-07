@@ -16,7 +16,9 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var petPreviewView: UIImageView!
     
     @IBAction func searchPet(_ sender: Any) {
-    }
+         let secondViewController: SearchResultViewController = SearchResultViewController()
+
+        self.present(secondViewController, animated: true, completion: nil)    }
     
     @IBAction func dismissKeyboard(_ sender: Any) {
         locationSearchBar.resignFirstResponder()

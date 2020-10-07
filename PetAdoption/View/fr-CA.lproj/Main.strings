@@ -1,0 +1,39 @@
+
+/* Class = "UISegmentedControl"; DqD-wj-EGC.segmentTitles[0] = "Dogs"; ObjectID = "DqD-wj-EGC"; */
+"DqD-wj-EGC.segmentTitles[0]" = "Chein";
+
+/* Class = "UISegmentedControl"; DqD-wj-EGC.segmentTitles[1] = "Cats"; ObjectID = "DqD-wj-EGC"; */
+"DqD-wj-EGC.segmentTitles[1]" = "Chat";
+
+/* Class = "UISegmentedControl"; DqD-wj-EGC.segmentTitles[2] = "Small Animals"; ObjectID = "DqD-wj-EGC"; */
+"DqD-wj-EGC.segmentTitles[2]" = "Petit Animal";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "E14-wD-KN9"; */
+"E14-wD-KN9.text" = "Label";
+
+/* Class = "UITabBarItem"; title = "Results"; ObjectID = "EhZ-NT-joF"; */
+"EhZ-NT-joF.title" = "Résultats";
+
+/* Class = "UITabBarItem"; title = "Pet"; ObjectID = "O7M-7c-y2J"; */
+"O7M-7c-y2J.title" = "animal de compagnie";
+
+/* Class = "UIButton"; normalTitle = "Search"; ObjectID = "OYF-ol-qmP"; */
+"OYF-ol-qmP.normalTitle" = "Chercher";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "SvY-Dg-sys"; */
+"SvY-Dg-sys.text" = "Label";
+
+/* Class = "UISearchBar"; placeholder = "Location"; ObjectID = "YUd-zn-5cT"; */
+"YUd-zn-5cT.placeholder" = "emplacement";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "cEe-Mj-Fqh"; */
+"cEe-Mj-Fqh.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "jXu-Gi-NMP"; */
+"jXu-Gi-NMP.text" = "Label";
+
+/* Class = "UITabBarItem"; title = "Search"; ObjectID = "oGf-2p-tx7"; */
+"oGf-2p-tx7.title" = "Chercher";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "zHg-Xy-Pci"; */
+"zHg-Xy-Pci.text" = "Label";

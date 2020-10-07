@@ -24,15 +24,15 @@ class SearchResultViewController: UIViewController, UITableViewDataSource, UITab
         pets.append(Pet(name: "Sam", age: 2, size: .medium, type: .dog, description: "Cute puppy", breed: "Cockapoo", birthday: Date(timeIntervalSince1970: 1506653497)))
         
         pets.append(Pet(name: "Buddy", age: 3, size: .large, type: .dog, description: "Cute doggo", breed: "Golden Retriever", birthday: Date(timeIntervalSince1970: 1506653497)))
-        
-        resultTableView.delegate = self
-        resultTableView.dataSource = self
-        
-        //Make sure height adjusts proper for contents
-        resultTableView.estimatedRowHeight = 175
-        resultTableView.rowHeight = UITableView.automaticDimension
+
+            resultTableView.delegate = self
+            resultTableView.dataSource = self
+            
+            //Make sure height adjusts proper for contents
+            resultTableView.estimatedRowHeight = 175
+            resultTableView.rowHeight = UITableView.automaticDimension
     }
-    
+
     // FUNCTION : updateUI
     // DESCRIPTION : Set the table cell labels, according to the pet
     // PARAMETERS : None

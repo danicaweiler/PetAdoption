@@ -39,7 +39,7 @@ public class PetTableViewCell: UITableViewCell {
             size = "Small"
         }
     
-        let year = pet!.age > 0 ? "years" : "year"
-        PetDetailLabel?.text = "\(size) | \(String(pet?.age ?? 0)) \(year) old |  \(pet?.breed ?? "")"
+        let year = pet!.age > 0 ? NSLocalizedString("years", comment: "") : NSLocalizedString("year", comment: "")
+        PetDetailLabel?.text = "\(size) | \(String(pet?.age ?? 0)) \(year) |  \(pet?.breed ?? "")"
     }
 }

@@ -18,7 +18,7 @@ class SearchResultViewController: UIViewController, UITableViewDataSource, UITab
         Pet(name: "Buddy", age: 3, size: .large, type: .dog, description: "Cute doggo", gender: .male, breed: "Golden Retriever", birthday: Date(timeIntervalSince1970: 1506653497), imageName: "buddy-1"),
         Pet(name: "Casey", age: 3, size: .small, type: .cat, description: "Cute kitty", gender: .male, breed: "Calico", birthday: Date(timeIntervalSince1970: 1506653497), imageName: "casey-1"),
         Pet(name: "Macey", age: 2, size: .medium, type: .cat, description: "Cute cat", gender: .female, breed: "Maincoon", birthday: Date(timeIntervalSince1970: 1506653497), imageName: "macey-1"),
-        Pet(name: "Brownie", age: 3, size: .small, type: .smallAnimal, description: "Cute hamster", gender: .male, breed: "Hamster", birthday: Date(timeIntervalSince1970: 1506653497), imageName: "brownie-1"),
+        Pet(name: "Brownie", age: 1, size: .small, type: .smallAnimal, description: "Cute hamster", gender: .male, breed: "Hamster", birthday: Date(timeIntervalSince1970: 1506653497), imageName: "brownie-1"),
         Pet(name: "Daisy", age: 2, size: .small, type: .smallAnimal, description: "Cute guinea pig", gender: .other, breed: "Guinea pig", birthday: Date(timeIntervalSince1970: 1506653497), imageName: "daisy-1")
     ]
     

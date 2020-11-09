@@ -1,3 +1,15 @@
 "results.years" = "ans";
 
 "results.year" = "année";
+
+"results.large" = "Grand";
+
+"results.medium" = "Moyen";
+
+"results.small" = "Petit";
+
+"results.female" = "Femme";
+
+"results.male" = "Mâle";
+
+"results.other" = "Autre";

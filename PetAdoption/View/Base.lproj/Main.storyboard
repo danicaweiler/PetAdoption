@@ -34,7 +34,7 @@
                                 <rect key="frame" x="326" y="173" width="48" height="30"/>
                                 <state key="normal" title="Search"/>
                                 <connections>
-                                    <action selector="searchPet:" destination="BYZ-38-t0r" eventType="touchUpInside" id="H2l-Ej-exa"/>
+                                    <action selector="searchPet:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8Ia-uF-PNS"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -64,6 +64,7 @@
                         <outlet property="locationSearchBar" destination="YUd-zn-5cT" id="uCX-6B-ufo"/>
                         <outlet property="petPreviewView" destination="lrt-k9-N4s" id="F4F-V9-c1D"/>
                         <outlet property="petType" destination="DqD-wj-EGC" id="nQJ-up-bXJ"/>
+                        <segue destination="znT-E7-Gjq" kind="show" identifier="ResultsSegue" id="tBj-k9-NTE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -78,13 +79,13 @@
         <!--Results-->
         <scene sceneID="DQa-FK-33N">
             <objects>
-                <viewController id="znT-E7-Gjq" customClass="SearchResultViewController" customModule="PetAdoption" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ResultsStoryBoard" id="znT-E7-Gjq" customClass="SearchResultViewController" customModule="PetAdoption" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jlc-S5-clC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="175" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Knp-la-lSu">
-                                <rect key="frame" x="20" y="54" width="374" height="742"/>
+                                <rect key="frame" x="20" y="10" width="374" height="732"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="6" indentationWidth="0.0" reuseIdentifier="petCell" id="8ni-Ru-kJD" customClass="PetTableViewCell" customModule="PetAdoption" customModuleProvider="target">
@@ -244,6 +245,9 @@
             <point key="canvasLocation" x="137.68115942028987" y="95.758928571428569"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="tBj-k9-NTE"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="heart" catalog="system" width="128" height="109"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>

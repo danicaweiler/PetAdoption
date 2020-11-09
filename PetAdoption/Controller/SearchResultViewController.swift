@@ -13,24 +13,38 @@ class SearchResultViewController: UIViewController, UITableViewDataSource, UITab
     @IBOutlet weak var resultTableView: UITableView!
     
     //Array of pets for table
-    internal var pets: [Pet] = []
+    internal var allPets: [Pet] = [
+        Pet(name: "Sam", age: 2, size: .medium, type: .dog, description: "Cute puppy", gender: .female, breed: "Cockapoo", birthday: Date(timeIntervalSince1970: 1506653497), imageName: "sam-1"),
+        Pet(name: "Buddy", age: 3, size: .large, type: .dog, description: "Cute doggo", gender: .male, breed: "Golden Retriever", birthday: Date(timeIntervalSince1970: 1506653497), imageName: "buddy-1"),
+        Pet(name: "Casey", age: 3, size: .small, type: .cat, description: "Cute kitty", gender: .male, breed: "Calico", birthday: Date(timeIntervalSince1970: 1506653497), imageName: "casey-1"),
+        Pet(name: "Macey", age: 2, size: .medium, type: .cat, description: "Cute cat", gender: .female, breed: "Maincoon", birthday: Date(timeIntervalSince1970: 1506653497), imageName: "macey-1"),
+        Pet(name: "Brownie", age: 3, size: .small, type: .smallAnimal, description: "Cute hamster", gender: .male, breed: "Hamster", birthday: Date(timeIntervalSince1970: 1506653497), imageName: "brownie-1"),
+        Pet(name: "Daisy", age: 2, size: .small, type: .smallAnimal, description: "Cute guinea pig", gender: .other, breed: "Guinea pig", birthday: Date(timeIntervalSince1970: 1506653497), imageName: "daisy-1")
+    ]
+    
+    internal var filterPets: [Pet] = []
+    public var sortBy: PetType = .all
     
     // FUNCTION : viewDidLoad
     // PARAMETERS : None
     // RETURNS : void
     override func viewDidLoad() {
         super.viewDidLoad()
-        //Temporary hard coded pets
-        pets.append(Pet(name: "Sam", age: 2, size: .medium, type: .dog, description: "Cute puppy", breed: "Cockapoo", birthday: Date(timeIntervalSince1970: 1506653497)))
-        
-        pets.append(Pet(name: "Buddy", age: 3, size: .large, type: .dog, description: "Cute doggo", breed: "Golden Retriever", birthday: Date(timeIntervalSince1970: 1506653497)))
-
-            resultTableView.delegate = self
-            resultTableView.dataSource = self
             
-            //Make sure height adjusts proper for contents
-            resultTableView.estimatedRowHeight = 175
-            resultTableView.rowHeight = UITableView.automaticDimension
+        resultTableView.delegate = self
+        resultTableView.dataSource = self
+          
+        //Make sure height adjusts proper for contents
+        resultTableView.estimatedRowHeight = 175
+        resultTableView.rowHeight = UITableView.automaticDimension
+        
+        if sortBy != .all {
+            filterPets = allPets.filter { pet in
+                return pet.type == sortBy
+            }
+        } else {
+            filterPets = allPets
+        }
     }
 
     // FUNCTION : updateUI
@@ -38,7 +52,7 @@ class SearchResultViewController: UIViewController, UITableViewDataSource, UITab
     // PARAMETERS : None
     // RETURNS : void
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return pets.count
+        return filterPets.count
     }
     
     // FUNCTION : tableView
@@ -50,7 +64,7 @@ class SearchResultViewController: UIViewController, UITableViewDataSource, UITab
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "petCell", for: indexPath as IndexPath) as! PetTableViewCell
         
-        cell.pet = pets[indexPath.row]
+        cell.pet = filterPets[indexPath.row]
         return cell
     }
 }

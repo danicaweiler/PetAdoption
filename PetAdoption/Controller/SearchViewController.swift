@@ -15,10 +15,15 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var petType: UISegmentedControl!
     @IBOutlet weak var petPreviewView: UIImageView!
     
-    @IBAction func searchPet(_ sender: Any) {
-         let secondViewController: SearchResultViewController = SearchResultViewController()
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Create a new variable to store the instance of Results with PetType for filter
+        let destinationVC = segue.destination as! SearchResultViewController
+        destinationVC.sortBy = PetType(rawValue: petType.selectedSegmentIndex) ?? .all
+    }
 
-        self.present(secondViewController, animated: true, completion: nil)    }
+    @IBAction func searchPet(_ sender: Any) {
+        self.performSegue(withIdentifier: "ResultsSegue", sender: self)        
+    }
     
     @IBAction func dismissKeyboard(_ sender: Any) {
         locationSearchBar.resignFirstResponder()

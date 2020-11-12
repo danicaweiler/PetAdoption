@@ -13,3 +13,11 @@
 "results.male" = "Mâle";
 
 "results.other" = "Autre";
+
+"detail.breed" = "La Race";
+
+"detail.size" = "La Taille";
+
+"detail.sex" = "Le Sexe";
+
+"detail.age" = "L'âge";

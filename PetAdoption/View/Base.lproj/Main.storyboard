@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WP7-y7-rR6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KHW-Zm-Txb">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -16,11 +16,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" placeholder="Location" translatesAutoresizingMaskIntoConstraints="NO" id="YUd-zn-5cT">
-                                <rect key="frame" x="20" y="58" width="374" height="56"/>
+                                <rect key="frame" x="20" y="102" width="374" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="DqD-wj-EGC">
-                                <rect key="frame" x="20" y="128" width="374" height="32"/>
+                                <rect key="frame" x="20" y="172" width="374" height="32"/>
                                 <segments>
                                     <segment title="Dogs"/>
                                     <segment title="Cats"/>
@@ -28,10 +28,10 @@
                                 </segments>
                             </segmentedControl>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lrt-k9-N4s">
-                                <rect key="frame" x="45" y="300" width="324" height="296"/>
+                                <rect key="frame" x="45" y="251" width="324" height="394"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OYF-ol-qmP">
-                                <rect key="frame" x="326" y="173" width="48" height="30"/>
+                                <rect key="frame" x="326" y="217" width="48" height="30"/>
                                 <state key="normal" title="Search"/>
                                 <connections>
                                     <action selector="searchPet:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8Ia-uF-PNS"/>
@@ -59,7 +59,7 @@
                             <outletCollection property="gestureRecognizers" destination="9Ln-yk-Kkf" appends="YES" id="8lU-hn-GZ1"/>
                         </connections>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="oGf-2p-tx7"/>
+                    <navigationItem key="navigationItem" title="Search" id="Dfl-Vr-7HO"/>
                     <connections>
                         <outlet property="locationSearchBar" destination="YUd-zn-5cT" id="uCX-6B-ufo"/>
                         <outlet property="petPreviewView" destination="lrt-k9-N4s" id="F4F-V9-c1D"/>
@@ -74,18 +74,18 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1047.8260869565217" y="95.758928571428569"/>
+            <point key="canvasLocation" x="1957.9710144927537" y="95.758928571428569"/>
         </scene>
         <!--Results-->
         <scene sceneID="DQa-FK-33N">
             <objects>
                 <viewController storyboardIdentifier="ResultsStoryBoard" id="znT-E7-Gjq" customClass="SearchResultViewController" customModule="PetAdoption" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jlc-S5-clC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="175" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Knp-la-lSu">
-                                <rect key="frame" x="10" y="10" width="394" height="807"/>
+                                <rect key="frame" x="10" y="98" width="394" height="773"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="6" indentationWidth="0.0" reuseIdentifier="petCell" id="8ni-Ru-kJD" customClass="PetTableViewCell" customModule="PetAdoption" customModuleProvider="target">
@@ -135,6 +135,7 @@
                                             <outlet property="PetDetailLabel" destination="E14-wD-KN9" id="uN8-6e-xXO"/>
                                             <outlet property="petImage" destination="1Mg-l2-XCh" id="GBC-xr-TgI"/>
                                             <outlet property="petNameLabel" destination="SvY-Dg-sys" id="y9e-nS-tNA"/>
+                                            <segue destination="g0R-Jr-mr5" kind="show" id="3xt-2a-Ocf"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -155,16 +156,16 @@
                         <viewLayoutGuide key="safeArea" id="Wip-TW-7W2"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Results" image="star" catalog="system" id="EhZ-NT-joF"/>
-                    <navigationItem key="navigationItem" id="kIA-vh-s6h"/>
+                    <navigationItem key="navigationItem" title="Results" id="kIA-vh-s6h"/>
                     <connections>
                         <outlet property="resultTableView" destination="Knp-la-lSu" id="FkL-pi-VNq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tnP-nW-f2B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1792.753623188406" y="95.758928571428569"/>
+            <point key="canvasLocation" x="2702.898550724638" y="95.758928571428569"/>
         </scene>
-        <!--Pet-->
+        <!--Details-->
         <scene sceneID="luK-4V-iJX">
             <objects>
                 <viewController id="g0R-Jr-mr5" customClass="PetDetailViewController" customModule="PetAdoption" customModuleProvider="target" sceneMemberID="viewController">
@@ -173,31 +174,31 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IwO-ey-PSD">
-                                <rect key="frame" x="50" y="84" width="314" height="272.5"/>
+                                <rect key="frame" x="50" y="128" width="314" height="272.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="272.5" id="E0e-Wb-XsW"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jXu-Gi-NMP">
-                                <rect key="frame" x="50" y="396.5" width="314" height="34"/>
+                                <rect key="frame" x="50" y="440.5" width="314" height="34"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <color key="textColor" red="0.16048267229999999" green="0.49776738599999998" blue="0.6231379534" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Details" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cEe-Mj-Fqh">
-                                <rect key="frame" x="50" y="456.5" width="314" height="20.5"/>
+                                <rect key="frame" x="50" y="500.5" width="314" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zHg-Xy-Pci">
-                                <rect key="frame" x="50" y="507" width="314" height="20.5"/>
+                                <rect key="frame" x="50" y="551" width="314" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="jXu-Gi-NMP" firstAttribute="trailing" secondItem="cEe-Mj-Fqh" secondAttribute="trailing" id="26m-OV-ChP"/>
                             <constraint firstItem="IwO-ey-PSD" firstAttribute="leading" secondItem="gIF-iu-Mwc" secondAttribute="leading" constant="50" id="2CM-TF-SyU"/>
@@ -215,6 +216,7 @@
                         <viewLayoutGuide key="safeArea" id="gIF-iu-Mwc"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Pet" image="heart" catalog="system" id="O7M-7c-y2J"/>
+                    <navigationItem key="navigationItem" title="Details" id="pfg-xb-uOf"/>
                     <connections>
                         <outlet property="petDescLabel" destination="zHg-Xy-Pci" id="mC3-ne-zgY"/>
                         <outlet property="petDetailView" destination="2uj-58-ZYC" id="NVB-y5-vOa"/>
@@ -225,32 +227,28 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9od-f7-f67" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2528.985507246377" y="95.758928571428569"/>
+            <point key="canvasLocation" x="3439.130434782609" y="95.758928571428569"/>
         </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="k1r-WK-LZk">
+        <!--Pet Adoption -->
+        <scene sceneID="sVi-Yb-KFF">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="WP7-y7-rR6" sceneMemberID="viewController">
+                <navigationController title="Pet Adoption " automaticallyAdjustsScrollViewInsets="NO" id="KHW-Zm-Txb" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="oGf-2p-tx7"/>
                     <toolbarItems/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dXO-Lk-DUi">
-                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="BwF-ab-Cy4">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBar>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="vSc-Yu-7Yb"/>
-                        <segue destination="znT-E7-Gjq" kind="relationship" relationship="viewControllers" id="R5O-Vk-ez9"/>
-                        <segue destination="g0R-Jr-mr5" kind="relationship" relationship="viewControllers" id="2js-TM-R3M"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="mso-kH-6l2"/>
                     </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="QTO-Qs-kdX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xil-7N-oZ1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="95.758928571428569"/>
+            <point key="canvasLocation" x="1047.8260869565217" y="95.758928571428569"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="tBj-k9-NTE"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="heart" catalog="system" width="128" height="109"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>

@@ -9,7 +9,7 @@
 import UIKit
 
 class SearchResultViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
+    
     @IBOutlet weak var resultTableView: UITableView!
     
     //Array of pets for table
@@ -25,15 +25,24 @@ class SearchResultViewController: UIViewController, UITableViewDataSource, UITab
     internal var filterPets: [Pet] = []
     public var sortBy: PetType = .all
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let nextScene =  segue.destination as! PetDetailViewController
+        
+        let indexPath = self.resultTableView.indexPathForSelectedRow
+        nextScene.petSelect = filterPets[indexPath!.row]
+        
+    }
+    
+    
     // FUNCTION : viewDidLoad
     // PARAMETERS : None
     // RETURNS : void
     override func viewDidLoad() {
         super.viewDidLoad()
-            
+        
         resultTableView.delegate = self
         resultTableView.dataSource = self
-          
+        
         //Make sure height adjusts proper for contents
         resultTableView.estimatedRowHeight = 175
         resultTableView.rowHeight = UITableView.automaticDimension
@@ -46,7 +55,7 @@ class SearchResultViewController: UIViewController, UITableViewDataSource, UITab
             filterPets = allPets
         }
     }
-
+    
     // FUNCTION : updateUI
     // DESCRIPTION : Set the table cell labels, according to the pet
     // PARAMETERS : None

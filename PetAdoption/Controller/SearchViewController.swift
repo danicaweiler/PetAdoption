@@ -9,8 +9,11 @@
 import UIKit
 import Foundation
 
-class SearchViewController: UIViewController {
-
+class SearchViewController: UIViewController , UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    var pickerData:[String] = ["All Genders", "Male", "Female", "Other"]
+    
+    @IBOutlet weak var genderSelect: UIPickerView!
     @IBOutlet weak var locationSearchBar: UISearchBar!
     @IBOutlet weak var petType: UISegmentedControl!
     @IBOutlet weak var petPreviewView: UIImageView!
@@ -63,6 +66,8 @@ class SearchViewController: UIViewController {
         //Looks for single or multiple taps.
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         
+        self.genderSelect.dataSource = self
+        self.genderSelect.delegate = self
         view.addGestureRecognizer(tap)
 
         // init image holder
@@ -70,7 +75,6 @@ class SearchViewController: UIViewController {
         petPreviewView?.image = petIconImage ?? UIImage()
         
         petPreviewView.roundImageCorners()
-    
     }
     
     // FUNCTION : dismissKeyboard
@@ -81,4 +85,23 @@ class SearchViewController: UIViewController {
     //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
     }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+         return pickerData.count
+        
+    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return pickerData[row]
+    }
+    
 }
+

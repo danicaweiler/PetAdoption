@@ -45,19 +45,31 @@
                                             <action selector="petTypeChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="ehy-ro-a2c"/>
                                         </connections>
                                     </segmentedControl>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OYF-ol-qmP">
-                                        <rect key="frame" x="25" y="131" width="344" height="35"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="35" id="Bg6-Fd-Y5l"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
-                                        <state key="normal" title="Search">
-                                            <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="searchPet:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8Ia-uF-PNS"/>
-                                        </connections>
-                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="I3g-VO-m0r">
+                                        <rect key="frame" x="10" y="141" width="374" height="60"/>
+                                        <subviews>
+                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LGS-Nv-kbq">
+                                                <rect key="frame" x="0.0" y="0.0" width="200" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="200" id="9xa-wz-kPV"/>
+                                                    <constraint firstAttribute="height" constant="60" id="efa-ew-NSB"/>
+                                                </constraints>
+                                            </pickerView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OYF-ol-qmP">
+                                                <rect key="frame" x="311" y="0.0" width="63" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="Bg6-Fd-Y5l"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
+                                                <state key="normal" title="Search">
+                                                    <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="searchPet:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8Ia-uF-PNS"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lrt-k9-N4s">
                                         <rect key="frame" x="47" y="216" width="300" height="478"/>
                                         <constraints>
@@ -69,13 +81,12 @@
                                 <color key="tintColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="YUd-zn-5cT" firstAttribute="leading" secondItem="iL6-mz-XTz" secondAttribute="leading" constant="5" id="1cT-bC-7eX"/>
-                                    <constraint firstItem="lrt-k9-N4s" firstAttribute="top" secondItem="OYF-ol-qmP" secondAttribute="bottom" constant="50" id="615-ws-dF0"/>
                                     <constraint firstItem="DqD-wj-EGC" firstAttribute="top" secondItem="YUd-zn-5cT" secondAttribute="bottom" constant="18" id="Afg-4s-rsM"/>
                                     <constraint firstItem="DqD-wj-EGC" firstAttribute="leading" secondItem="iL6-mz-XTz" secondAttribute="leading" constant="5" id="TeB-Sa-eXG"/>
+                                    <constraint firstAttribute="trailing" secondItem="I3g-VO-m0r" secondAttribute="trailing" constant="10" id="WDJ-Jn-jiq"/>
                                     <constraint firstAttribute="trailing" secondItem="DqD-wj-EGC" secondAttribute="trailing" constant="5" id="dCs-dw-3gd"/>
-                                    <constraint firstItem="OYF-ol-qmP" firstAttribute="top" secondItem="DqD-wj-EGC" secondAttribute="bottom" constant="8" id="lit-sq-SKK"/>
+                                    <constraint firstItem="I3g-VO-m0r" firstAttribute="leading" secondItem="iL6-mz-XTz" secondAttribute="leading" constant="10" id="fV5-2t-fRx"/>
                                     <constraint firstAttribute="trailing" secondItem="YUd-zn-5cT" secondAttribute="trailing" constant="5" id="vmJ-3Q-aEp"/>
-                                    <constraint firstAttribute="trailing" secondItem="OYF-ol-qmP" secondAttribute="trailing" constant="25" id="xU1-hK-gQ2"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -91,6 +102,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Pet Adoption" id="Dfl-Vr-7HO"/>
                     <connections>
+                        <outlet property="genderSelect" destination="LGS-Nv-kbq" id="IWm-Uo-4PC"/>
                         <outlet property="locationSearchBar" destination="YUd-zn-5cT" id="uCX-6B-ufo"/>
                         <outlet property="petPreviewView" destination="lrt-k9-N4s" id="F4F-V9-c1D"/>
                         <outlet property="petType" destination="DqD-wj-EGC" id="nQJ-up-bXJ"/>
@@ -285,6 +297,7 @@
             <point key="canvasLocation" x="1047.8260869565217" y="95.758928571428569"/>
         </scene>
     </scenes>
+    <color key="tintColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
     <resources>
         <image name="heart" catalog="system" width="128" height="109"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>

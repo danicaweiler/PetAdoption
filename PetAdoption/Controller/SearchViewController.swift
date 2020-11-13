@@ -61,9 +61,16 @@ class SearchViewController: UIViewController {
         super.viewDidLoad()
         
         //Disable serach bar as not active feature
-        locationSearchBar.isUserInteractionEnabled = false
-        locationSearchBar.alpha = 0.60
-        
+//        locationSearchBar.isUserInteractionEnabled = false
+//        locationSearchBar.alpha = 0.60
+        //Looks for single or multiple taps.
+             let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+
+            //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
+            //tap.cancelsTouchesInView = false
+
+            view.addGestureRecognizer(tap)
+
         // init image holder
         let petIconImage = UIImage(named:"buddy-1")
         petPreviewView?.image = petIconImage ?? UIImage()
@@ -71,4 +78,9 @@ class SearchViewController: UIViewController {
         petPreviewView.roundImageCorners()
     
     }
+    //Calls this function when the tap is recognized.
+           @objc func dismissKeyboard() {
+               //Causes the view (or one of its embedded text fields) to resign the first responder status.
+               view.endEditing(true)
+           }
 }

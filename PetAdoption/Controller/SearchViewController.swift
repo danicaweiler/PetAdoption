@@ -68,12 +68,7 @@ class SearchViewController: UIViewController {
         let petIconImage = UIImage(named:"buddy-1")
         petPreviewView?.image = petIconImage ?? UIImage()
         
-        petPreviewView.layer.borderWidth = 5
-        petPreviewView.layer.masksToBounds = false
-        petPreviewView.layer.borderColor = UIColor.purple.cgColor
-        petPreviewView.layer.cornerRadius = 50
-        petPreviewView.clipsToBounds = true
+        petPreviewView.roundImageCorners()
     
     }
 }
-

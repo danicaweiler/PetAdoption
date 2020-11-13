@@ -19,6 +19,7 @@
 		27B6CBBC25223E31008A9045 /* PetAdoptionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B6CBBB25223E31008A9045 /* PetAdoptionUITests.swift */; };
 		27B6CBCA25223FB6008A9045 /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B6CBC925223FB6008A9045 /* SearchResultViewController.swift */; };
 		27B6CBCC2522404D008A9045 /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B6CBCB2522404D008A9045 /* Pet.swift */; };
+		27C9909F255F23990011538E /* UIImageView+Corners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C9909E255F23990011538E /* UIImageView+Corners.swift */; };
 		27CD24B12523813F0031A594 /* PetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CD24B02523813F0031A594 /* PetTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +63,7 @@
 		27B6CBBD25223E31008A9045 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		27B6CBC925223FB6008A9045 /* SearchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
 		27B6CBCB2522404D008A9045 /* Pet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
+		27C9909E255F23990011538E /* UIImageView+Corners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Corners.swift"; sourceTree = "<group>"; };
 		27CD24B02523813F0031A594 /* PetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -167,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				27B6CBCB2522404D008A9045 /* Pet.swift */,
+				27C9909E255F23990011538E /* UIImageView+Corners.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 				276FBD0E25252D46001BB500 /* PetDetailViewController.swift in Sources */,
 				27B6CBCA25223FB6008A9045 /* SearchResultViewController.swift in Sources */,
 				27B6CB9C25223E2F008A9045 /* SceneDelegate.swift in Sources */,
+				27C9909F255F23990011538E /* UIImageView+Corners.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

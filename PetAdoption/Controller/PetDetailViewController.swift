@@ -23,11 +23,7 @@ class PetDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-            petImageView.layer.borderWidth = 5
-            petImageView.layer.masksToBounds = false
-            petImageView.layer.borderColor = UIColor.purple.cgColor
-            petImageView.layer.cornerRadius = 50
-            petImageView.clipsToBounds = true
+        petImageView.roundImageCorners()
         
         let year = petSelect!.age == 1 ? NSLocalizedString("results.year", comment: "") : NSLocalizedString("results.years", comment: "")
         //Get the pet information that was passed in with segue from previous view

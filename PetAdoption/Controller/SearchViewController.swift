@@ -26,6 +26,17 @@ class SearchViewController: UIViewController , UIPickerViewDelegate, UIPickerVie
         // Create a new variable to store the instance of Results with PetType for filter
         let destinationVC = segue.destination as! SearchResultViewController
         destinationVC.sortBy = PetType(rawValue: petType.selectedSegmentIndex) ?? .all
+        let gender = pickerData[genderSelect.selectedRow(inComponent: 0)]
+        var genderSelected: PetGender = .all
+        if gender == "Female" {
+            genderSelected = .female
+        } else if gender == "Male" {
+            genderSelected = .male
+        } else if gender == "Other" {
+            genderSelected = .other
+        }
+        destinationVC.sortByGender = genderSelected
+        
     }
 
     // FUNCTION : petTypeChanged
@@ -54,7 +65,7 @@ class SearchViewController: UIViewController , UIPickerViewDelegate, UIPickerVie
     // PARAMETERS : Sender
     // RETURNS : IsAction
     @IBAction func searchPet(_ sender: Any) {
-        self.performSegue(withIdentifier: "ResultsSegue", sender: self)        
+        self.performSegue(withIdentifier: "ResultsSegue", sender: self)     
     }
     
     // FUNCTION : viewDidLoad
@@ -65,11 +76,11 @@ class SearchViewController: UIViewController , UIPickerViewDelegate, UIPickerVie
         //Programtically handle gestures
         //Looks for single or multiple taps.
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+    
+        view.addGestureRecognizer(tap)
         
         self.genderSelect.dataSource = self
         self.genderSelect.delegate = self
-        view.addGestureRecognizer(tap)
-
         // init image holder
         let petIconImage = UIImage(named:"buddy-1")
         petPreviewView?.image = petIconImage ?? UIImage()

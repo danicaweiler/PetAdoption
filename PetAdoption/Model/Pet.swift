@@ -62,12 +62,15 @@ enum PetGender : CustomStringConvertible {
     case female
     case male
     case other
+    case all
+    
     
        var description : String {
      switch self {
          case .female: return NSLocalizedString("results.female", comment: "")
          case .male: return NSLocalizedString("results.male", comment: "")
          case .other: return NSLocalizedString("results.other", comment: "")
+         case .all: return "all"
      }
     }
 }

@@ -25,6 +25,10 @@ class SearchResultViewController: UIViewController, UITableViewDataSource, UITab
     internal var filterPets: [Pet] = []
     public var sortBy: PetType = .all
     
+    // FUNCTION : prepare
+    // PARAMETERS : segue, sender
+    // RETURNS : void
+    // Prepare data for next segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let nextScene =  segue.destination as! PetDetailViewController
         

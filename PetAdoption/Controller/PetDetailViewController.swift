@@ -22,6 +22,13 @@ class PetDetailViewController: UIViewController {
     // RETURNS : void
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+            petImageView.layer.borderWidth = 5
+            petImageView.layer.masksToBounds = false
+            petImageView.layer.borderColor = UIColor.purple.cgColor
+            petImageView.layer.cornerRadius = 50
+            petImageView.clipsToBounds = true
+        
         let year = petSelect!.age == 1 ? NSLocalizedString("results.year", comment: "") : NSLocalizedString("results.years", comment: "")
         //Get the pet information that was passed in with segue from previous view
         let breed = NSLocalizedString("detail.breed", comment: "")
@@ -34,7 +41,7 @@ class PetDetailViewController: UIViewController {
         petImageView?.image = petIconImage ?? UIImage()
         petNameLabel.text = petSelect?.name ?? "Unknown"
         petTraitsLabel.numberOfLines = 0
-        petTraitsLabel.text = "\(breed): \(petSelect?.breed ?? "") \n\(size): \(petSelect?.size.description ?? "Unknown") \n\(sex): \(petSelect?.gender.description ?? "Unknown") | \(age): \(String(petSelect?.age ?? 0)) \(year) "
+        petTraitsLabel.text = "\(breed): \(petSelect?.breed ?? "") \n\(size): \(petSelect?.size.description ?? "Unknown") \n\(sex): \(petSelect?.gender.description ?? "Unknown") \n\(age): \(String(petSelect?.age ?? 0)) \(year) "
         
         petDescLabel.text = "\(petSelect?.name ?? "Unknown") is a \(petSelect?.description ?? "wonderful") that is looking for a loving forever home. \n\(petSelect?.name ?? "Unknown") would make a perfect addition to your family."
         

@@ -24,6 +24,7 @@ class SearchResultViewController: UIViewController, UITableViewDataSource, UITab
     
     internal var filterPets: [Pet] = []
     public var sortBy: PetType = .all
+    public var sortByGender = PetGender.all
     
     // FUNCTION : prepare
     // PARAMETERS : segue, sender
@@ -57,6 +58,13 @@ class SearchResultViewController: UIViewController, UITableViewDataSource, UITab
             }
         } else {
             filterPets = allPets
+        }
+        
+        if sortByGender != .all {
+            filterPets = filterPets.filter { pet in
+                return pet.gender == sortByGender
+            }
+            
         }
     }
     

@@ -11,6 +11,7 @@ import Foundation
 
 class SearchViewController: UIViewController , UIPickerViewDelegate, UIPickerViewDataSource {
     
+    //Need to localize and change to double array with english values for data transfer betwen view controllers. Leaving for sake of time right now
     var pickerData:[String] = ["All Genders", "Male", "Female", "Other"]
     
     @IBOutlet weak var genderSelect: UIPickerView!
@@ -41,7 +42,7 @@ class SearchViewController: UIViewController , UIPickerViewDelegate, UIPickerVie
 
     // FUNCTION : petTypeChanged
     // PARAMETERS : Send
-    // RETURNS : Isaction
+    // RETURNS : IsAction
     // change photo dynamically when UISegmentedControl is changed
     @IBAction func petTypeChanged(_ sender: Any) {
         let title = petType.titleForSegment(at: petType.selectedSegmentIndex)
@@ -96,20 +97,28 @@ class SearchViewController: UIViewController , UIPickerViewDelegate, UIPickerVie
     //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 
+    // FUNCTION : numberOfComponents
+    // PARAMETERS : pickerView
+    // RETURNS : Int
+    // Picker view helper
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     
+    // FUNCTION : pickerview
+    // PARAMETERS : pickerView, component
+    // RETURNS : Int
+    // Picker view helper
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
          return pickerData.count
         
     }
+    
+    // FUNCTION : pickerView
+    // PARAMETERS : pickerView, row, component
+    // RETURNS : String?
+    // Picker view helper
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return pickerData[row]
     }

@@ -21,6 +21,28 @@ class SearchViewController: UIViewController {
         destinationVC.sortBy = PetType(rawValue: petType.selectedSegmentIndex) ?? .all
     }
 
+    // change photo dynamically when UISegmentedControl is changed
+    @IBAction func petTypeChanged(_ sender: Any) {
+        let title = petType.titleForSegment(at: petType.selectedSegmentIndex)
+        
+        switch title {
+        case "Dogs":
+            let petIconImage = UIImage(named:"buddy-1")
+                         petPreviewView?.image = petIconImage ?? UIImage()
+            break
+        case "Cats":
+            let petIconImage = UIImage(named:"casey-1")
+                         petPreviewView?.image = petIconImage ?? UIImage()
+            break
+        case "Small Animals":
+            let petIconImage = UIImage(named:"daisy-1")
+                         petPreviewView?.image = petIconImage ?? UIImage()
+            break
+        default:
+            break;
+        }
+    }
+    
     @IBAction func searchPet(_ sender: Any) {
         self.performSegue(withIdentifier: "ResultsSegue", sender: self)        
     }
@@ -36,7 +58,7 @@ class SearchViewController: UIViewController {
         super.viewDidLoad()
         
         // temporary image holder
-        let petIconImage = UIImage(named:"dog-icon")
+        let petIconImage = UIImage(named:"buddy-1")
                      petPreviewView?.image = petIconImage ?? UIImage()
     }
 }

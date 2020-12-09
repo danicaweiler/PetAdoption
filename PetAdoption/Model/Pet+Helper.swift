@@ -1,5 +1,5 @@
 //
-//  Pet.swift
+//  Pet+Helper.swift
 //  PetAdoption
 //
 //  Created by user182198 (Danica) on 9/28/20.
@@ -9,38 +9,22 @@
 import Foundation
 import UIKit
 
-// Class: Pet
-// Base class for defining what a pet is for now
-public class Pet {
-    var name: String
-    var breed: String?
-    var age: Int
-    var birthday: Date?
-    var size: PetSize
-    var type: PetType
-    var description: String
-    var gender: PetGender
-    var imageName: String?
-    
-    init(name: String, age: Int, size: PetSize, type: PetType, description: String, gender: PetGender, breed: String?, birthday: Date?, imageName: String?) {
-        self.name = name
-        self.age = age
-        self.size = size
-        self.type = type
-        self.description = description
-        self.breed = breed
-        self.birthday = birthday
-        self.gender = gender
-        self.imageName = imageName
-    }
-}
-
 //Define acceptable pet types
-enum PetType: Int {
+enum PetType: Int, CustomStringConvertible {
     case all = -1
     case dog = 0
     case cat = 1
     case smallAnimal = 2
+    
+    var description : String {
+      switch self {
+          case .all: return "all"
+          case .dog: return "dog"
+          case .cat: return "cat"
+          case .smallAnimal: return "smallAnimal"
+      }
+     }
+    
 }
 
 //Define acceptable sizes
@@ -64,8 +48,7 @@ enum PetGender : CustomStringConvertible {
     case other
     case all
     
-    
-       var description : String {
+    var description : String {
      switch self {
          case .female: return NSLocalizedString("results.female", comment: "")
          case .male: return NSLocalizedString("results.male", comment: "")

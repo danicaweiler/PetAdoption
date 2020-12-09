@@ -27,19 +27,19 @@ class PetDetailViewController: UIViewController {
         
         let year = petSelect!.age == 1 ? NSLocalizedString("results.year", comment: "") : NSLocalizedString("results.years", comment: "")
         //Get the pet information that was passed in with segue from previous view
-        let breed = NSLocalizedString("detail.breed", comment: "")
+        //let breed = NSLocalizedString("detail.breed", comment: "")
         let size = NSLocalizedString("detail.size", comment: "")
         let sex = NSLocalizedString("detail.sex", comment: "")
         let age = NSLocalizedString("detail.age", comment: "")
-        let picName = petSelect?.imageName ??  "dog-icon"
+        let picName = petSelect?.imagename ??  "dog-icon"
         let petIconImage = UIImage(named:picName)
         
         petImageView?.image = petIconImage ?? UIImage()
         petNameLabel.text = petSelect?.name ?? "Unknown"
         petTraitsLabel.numberOfLines = 0
-        petTraitsLabel.text = "\(breed): \(petSelect?.breed ?? "") \n\(size): \(petSelect?.size.description ?? "Unknown") \n\(sex): \(petSelect?.gender.description ?? "Unknown") \n\(age): \(String(petSelect?.age ?? 0)) \(year) "
+        petTraitsLabel.text = "\(size): \(petSelect?.size ?? "Unknown") \n\(sex): \(petSelect?.gender ?? "Unknown") \n\(age): \(String(petSelect?.age ?? 0)) \(year) "
         
-        petDescLabel.text = "\(petSelect?.name ?? "Unknown") is a \(petSelect?.description ?? "wonderful") that is looking for a loving forever home. \n\(petSelect?.name ?? "Unknown") would make a perfect addition to your family."
+        petDescLabel.text = "\(petSelect?.name ?? "Unknown") is a \(petSelect?.desc ?? "wonderful") that is looking for a loving forever home. \n\(petSelect?.name ?? "Unknown") would make a perfect addition to your family."
         
     }
 }

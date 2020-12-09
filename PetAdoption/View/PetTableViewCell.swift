@@ -25,13 +25,13 @@ public class PetTableViewCell: UITableViewCell {
     // PARAMETERS : None
     // RETURNS : void
     private func updateUI() {
-        let petIconImage = UIImage(named: pet?.imageName ?? "dog-icon")
+        let petIconImage = UIImage(named: pet?.imagename ?? "dog-icon")
         petImage?.image = petIconImage ?? UIImage()
         petNameLabel?.text = pet?.name
         
         //let size: String = pet?.size. ?? "unknown"
     
         let year = pet!.age == 1 ? NSLocalizedString("results.year", comment: "") : NSLocalizedString("results.years", comment: "")
-        PetDetailLabel?.text = "\(pet?.gender.description ?? "Unknown") | \(pet?.size.description ?? "Unknown") | \(String(pet?.age ?? 0)) \(year) |  \(pet?.breed ?? "")"
+        PetDetailLabel?.text = "\(pet?.gender?.description ?? "Unknown") | \(pet?.size?.description ?? "Unknown") | \(String(pet?.age ?? 0)) \(year)"
     }
 }

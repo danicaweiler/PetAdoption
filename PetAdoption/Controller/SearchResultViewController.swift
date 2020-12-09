@@ -11,17 +11,7 @@ import UIKit
 class SearchResultViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var resultTableView: UITableView!
-    
-    //Array of pets for table
-    internal var allPets: [Pet] = [
-        Pet(name: "Sam", age: 2, size: .medium, type: .dog, description: "Cute puppy", gender: .female, breed: "Cockapoo", birthday: Date(timeIntervalSince1970: 1506653497), imageName: "sam-1"),
-        Pet(name: "Buddy", age: 3, size: .large, type: .dog, description: "Cute doggo", gender: .male, breed: "Golden Retriever", birthday: Date(timeIntervalSince1970: 1506653497), imageName: "buddy-1"),
-        Pet(name: "Casey", age: 3, size: .small, type: .cat, description: "Cute kitty", gender: .male, breed: "Calico", birthday: Date(timeIntervalSince1970: 1506653497), imageName: "casey-1"),
-        Pet(name: "Macey", age: 2, size: .medium, type: .cat, description: "Cute cat", gender: .female, breed: "Maincoon", birthday: Date(timeIntervalSince1970: 1506653497), imageName: "macey-1"),
-        Pet(name: "Brownie", age: 1, size: .small, type: .smallAnimal, description: "Cute hamster", gender: .male, breed: "Hamster", birthday: Date(timeIntervalSince1970: 1506653497), imageName: "brownie-1"),
-        Pet(name: "Daisy", age: 2, size: .small, type: .smallAnimal, description: "Cute guinea pig", gender: .other, breed: "Guinea pig", birthday: Date(timeIntervalSince1970: 1506653497), imageName: "daisy-1")
-    ]
-    
+    var store: PetStore!
     internal var filterPets: [Pet] = []
     public var sortBy: PetType = .all
     public var sortByGender = PetGender.all
@@ -35,9 +25,39 @@ class SearchResultViewController: UIViewController, UITableViewDataSource, UITab
         
         let indexPath = self.resultTableView.indexPathForSelectedRow
         nextScene.petSelect = filterPets[indexPath!.row]
-        
     }
     
+    private func updateData() {
+        store.fetchAllPets {
+            (petResults) in
+            switch petResults {
+            case let .success(pets):
+                if pets.count == 0 {
+                    self.store.getAllPets { (petsResult)->Void in
+                        self.updateData()
+                    }
+                }
+                
+                if self.sortBy != .all {
+                    self.filterPets = pets.filter { inPet in
+                        return inPet.type == self.sortBy.description
+                    }
+                } else {
+                    self.filterPets = pets
+                }
+                        
+                if self.sortByGender != .all {
+                    self.filterPets = self.filterPets.filter { inPet in
+                        return inPet.gender == self.sortByGender.description
+                    }
+                }
+            case .failure:
+                self.filterPets.removeAll()
+            }
+        
+            self.resultTableView.reloadData()
+        }
+    }
     
     // FUNCTION : viewDidLoad
     // PARAMETERS : None
@@ -47,25 +67,12 @@ class SearchResultViewController: UIViewController, UITableViewDataSource, UITab
         
         resultTableView.delegate = self
         resultTableView.dataSource = self
-        
+        store = PetStore()
+        //Now that we have a store, get the data
+        updateData()
         //Make sure height adjusts proper for contents
         resultTableView.estimatedRowHeight = 175
         resultTableView.rowHeight = UITableView.automaticDimension
-        
-        if sortBy != .all {
-            filterPets = allPets.filter { pet in
-                return pet.type == sortBy
-            }
-        } else {
-            filterPets = allPets
-        }
-        
-        if sortByGender != .all {
-            filterPets = filterPets.filter { pet in
-                return pet.gender == sortByGender
-            }
-            
-        }
     }
     
     // FUNCTION : updateUI

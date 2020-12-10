@@ -74,14 +74,20 @@ class SearchViewController: UIViewController , UIPickerViewDelegate, UIPickerVie
     // RETURNS : void
     override func viewDidLoad() {
         super.viewDidLoad()
-        //Programtically handle gestures
-        //Looks for single or multiple taps.
+        petPreviewView.isUserInteractionEnabled = true
+        
+        // Programtically handle gestures
+        // Looks for single or multiple taps.
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
-    
         view.addGestureRecognizer(tap)
+        
+        // Handles pinches.
+        let pinchGesture: UIPinchGestureRecognizer = UIPinchGestureRecognizer(target: self, action: #selector(handlePinch(sender: )))
+        petPreviewView.addGestureRecognizer(pinchGesture)
         
         self.genderSelect.dataSource = self
         self.genderSelect.delegate = self
+        
         // init image holder
         let petIconImage = UIImage(named:"buddy-1")
         petPreviewView?.image = petIconImage ?? UIImage()
@@ -89,12 +95,28 @@ class SearchViewController: UIViewController , UIPickerViewDelegate, UIPickerVie
         petPreviewView.roundImageCorners()
     }
     
+    // FUNCTION : handlePinch
+    // PARAMETERS : sender
+    // RETURNS : void
+    // Calls this function when the pinch is recognized.
+    @objc func handlePinch(sender: UIPinchGestureRecognizer) {
+        guard sender.view != nil else {
+            return
+        }
+        
+        if sender.state == .began || sender.state == .changed {
+            sender.view?.transform = (sender.view?.transform.scaledBy(x: sender.scale, y: sender.scale))!
+            sender.scale = 1.0
+        }
+    }
+    
+    
     // FUNCTION : dismissKeyboard
     // PARAMETERS : None
     // RETURNS : void
-    //Calls this function when the tap is recognized.
+    // Calls this function when the tap is recognized.
     @objc func dismissKeyboard() {
-    //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        // Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
     }
 
@@ -122,6 +144,5 @@ class SearchViewController: UIViewController , UIPickerViewDelegate, UIPickerVie
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return pickerData[row]
     }
-    
 }
 

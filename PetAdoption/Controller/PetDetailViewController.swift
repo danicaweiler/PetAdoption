@@ -9,10 +9,10 @@ import UIKit
 class PetDetailViewController: UIViewController {
 
     @IBOutlet var petDetailView: UIView!
-    @IBOutlet weak var petImageView: UIImageView!
     @IBOutlet weak var petNameLabel: UILabel!
     @IBOutlet weak var petTraitsLabel: UILabel!
     @IBOutlet weak var petDescLabel: UILabel!
+    @IBOutlet weak var petImageView: UIImageView!
     
     var petSelect : Pet?
 
@@ -41,5 +41,24 @@ class PetDetailViewController: UIViewController {
         
         petDescLabel.text = "\(petSelect?.name ?? "Unknown") is a \(petSelect?.desc ?? "wonderful") that is looking for a loving forever home. \n\(petSelect?.name ?? "Unknown") would make a perfect addition to your family."
         
+        // Handles pinches.
+        petImageView.isUserInteractionEnabled = true
+        let pinchGesture: UIPinchGestureRecognizer = UIPinchGestureRecognizer(target: self, action: #selector(handlePinch(sender: )))
+        petImageView.addGestureRecognizer(pinchGesture)
+    }
+    
+    // FUNCTION : handlePinch
+    // PARAMETERS : sender
+    // RETURNS : void
+    // Calls this function when the pinch is recognized.
+    @objc func handlePinch(sender: UIPinchGestureRecognizer) {
+        guard sender.view != nil else {
+            return
+        }
+        
+        if sender.state == .began || sender.state == .changed {
+            sender.view?.transform = (sender.view?.transform.scaledBy(x: sender.scale, y: sender.scale))!
+            sender.scale = 1.0
+        }
     }
 }

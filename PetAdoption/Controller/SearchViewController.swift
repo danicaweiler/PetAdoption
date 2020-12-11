@@ -9,7 +9,7 @@
 import UIKit
 import Foundation
 
-class SearchViewController: UIViewController , UIPickerViewDelegate, UIPickerViewDataSource {
+class SearchViewController: UIViewController , UIPickerViewDelegate, UIPickerViewDataSource, UIContextMenuInteractionDelegate {
     
     //Need to localize and change to double array with english values for data transfer betwen view controllers. Leaving for sake of time right now
     var pickerData:[String] = ["All Genders", "Male", "Female", "Other"]
@@ -75,6 +75,11 @@ class SearchViewController: UIViewController , UIPickerViewDelegate, UIPickerVie
     override func viewDidLoad() {
         super.viewDidLoad()
         petPreviewView.isUserInteractionEnabled = true
+        
+        //allows the contect menu for the picture
+        let interaction = UIContextMenuInteraction(delegate: self)
+                  petPreviewView.addInteraction(interaction)
+                  petPreviewView.isUserInteractionEnabled = true
         
         // Programtically handle gestures
         // Looks for single or multiple taps.
@@ -143,6 +148,33 @@ class SearchViewController: UIViewController , UIPickerViewDelegate, UIPickerVie
     // Picker view helper
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return pickerData[row]
+    }
+    
+    // FUNCTION : contextMenuInteraction
+    // DESC: Links context menu
+    func contextMenuInteraction(_ interaction: UIContextMenuInteraction, configurationForMenuAtLocation location: CGPoint) -> UIContextMenuConfiguration? {
+       return UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { _ -> UIMenu? in
+           return self.createContextMenu()
+       }
+    }
+    // FUNCTION : createContextMenu
+    // PARAMETERS : None
+    // RETURNS : void
+    // When a picture is tapped for a longer period of time, a context menu pops up so we can share, copy or save
+    func createContextMenu() -> UIMenu {
+        let shareAction = UIAction(title: "Share", image: UIImage(systemName: "square.and.arrow.up")) { _ in
+            print("Share")
+        }
+        
+        let copy = UIAction(title: "Copy", image: UIImage(systemName: "doc.on.doc")) { _ in
+            print("Copy")
+        }
+        
+        let saveToPhotos = UIAction(title: "Add To Photos", image: UIImage(systemName: "photo")) { _ in
+            print("Save to Photos")
+        }
+        
+        return UIMenu(title: "", children: [shareAction, copy, saveToPhotos])
     }
 }
 

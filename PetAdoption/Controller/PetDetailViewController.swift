@@ -6,8 +6,8 @@
 
 import UIKit
 
-class PetDetailViewController: UIViewController {
-
+class PetDetailViewController: UIViewController, UIContextMenuInteractionDelegate {
+    
     @IBOutlet var petDetailView: UIView!
     @IBOutlet weak var petNameLabel: UILabel!
     @IBOutlet weak var petTraitsLabel: UILabel!
@@ -16,12 +16,15 @@ class PetDetailViewController: UIViewController {
     
     var petSelect : Pet?
 
-    
     // FUNCTION : viewDidLoad
     // PARAMETERS : None
     // RETURNS : void
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let interaction = UIContextMenuInteraction(delegate: self)
+        petImageView.addInteraction(interaction)
+        petImageView.isUserInteractionEnabled = true
         
         petImageView.roundImageCorners()
         
@@ -45,6 +48,32 @@ class PetDetailViewController: UIViewController {
         petImageView.isUserInteractionEnabled = true
         let pinchGesture: UIPinchGestureRecognizer = UIPinchGestureRecognizer(target: self, action: #selector(handlePinch(sender: )))
         petImageView.addGestureRecognizer(pinchGesture)
+    }
+    // FUNCTION : contextMenuInteraction
+    // DESC: Links context menu
+    func contextMenuInteraction(_ interaction: UIContextMenuInteraction, configurationForMenuAtLocation location: CGPoint) -> UIContextMenuConfiguration? {
+       return UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { _ -> UIMenu? in
+           return self.createContextMenu()
+       }
+    }
+    // FUNCTION : createContextMenu
+    // PARAMETERS : None
+    // RETURNS : void
+    // When a picture is tapped for a longer period of time, a context menu pops up so we can share, copy or save
+    func createContextMenu() -> UIMenu {
+        let shareAction = UIAction(title: "Share", image: UIImage(systemName: "square.and.arrow.up")) { _ in
+            print("Share")
+        }
+        
+        let copy = UIAction(title: "Copy", image: UIImage(systemName: "doc.on.doc")) { _ in
+            print("Copy")
+        }
+        
+        let saveToPhotos = UIAction(title: "Add To Photos", image: UIImage(systemName: "photo")) { _ in
+            print("Save to Photos")
+        }
+        
+        return UIMenu(title: "", children: [shareAction, copy, saveToPhotos])
     }
     
     // FUNCTION : handlePinch

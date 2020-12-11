@@ -9,7 +9,7 @@
 import UIKit
 import Foundation
 
-class SearchViewController: UIViewController , UIPickerViewDelegate, UIPickerViewDataSource {
+class SearchViewController: UIViewController , UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
     
     //Need to localize and change to double array with english values for data transfer betwen view controllers. Leaving for sake of time right now
     var pickerData:[String] = ["All Genders", "Male", "Female", "Other"]
@@ -77,6 +77,8 @@ class SearchViewController: UIViewController , UIPickerViewDelegate, UIPickerVie
         super.viewDidLoad()
         petPreviewView.isUserInteractionEnabled = true
         
+        petAge.delegate = self
+        
         // Programtically handle gestures
         // Looks for single or multiple taps.
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
@@ -94,6 +96,16 @@ class SearchViewController: UIViewController , UIPickerViewDelegate, UIPickerVie
         petPreviewView?.image = petIconImage ?? UIImage()
         
         petPreviewView.roundImageCorners()
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let currentText = petAge.text ?? ""
+        guard let ageRange = Range(range, in: currentText) else {
+            return false
+        }
+        
+        let updateText = currentText.replacingCharacters(in: ageRange, with: string)
+        return updateText.count < 3
     }
     
     

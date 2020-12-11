@@ -18,6 +18,7 @@ class SearchViewController: UIViewController , UIPickerViewDelegate, UIPickerVie
     @IBOutlet weak var locationSearchBar: UISearchBar!
     @IBOutlet weak var petType: UISegmentedControl!
     @IBOutlet weak var petPreviewView: UIImageView!
+    @IBOutlet weak var petAge: UITextField!
     
     // FUNCTION : perform
     // PARAMETERS : segue, sender
@@ -94,6 +95,7 @@ class SearchViewController: UIViewController , UIPickerViewDelegate, UIPickerVie
         
         petPreviewView.roundImageCorners()
     }
+    
     
     // FUNCTION : handlePinch
     // PARAMETERS : sender

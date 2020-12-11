@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KHW-Zm-Txb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KHW-Zm-Txb">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -24,7 +26,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="vik-BA-qub"/>
                                         </constraints>
-                                        <color key="barTintColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="barTintColor" systemColor="opaqueSeparatorColor"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <scopeButtonTitles>
                                             <string>Title</string>
@@ -55,14 +57,14 @@
                                                     <constraint firstAttribute="height" constant="60" id="efa-ew-NSB"/>
                                                 </constraints>
                                             </pickerView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OYF-ol-qmP">
-                                                <rect key="frame" x="311" y="0.0" width="63" height="60"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OYF-ol-qmP">
+                                                <rect key="frame" x="312" y="0.0" width="62" height="60"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="60" id="Bg6-Fd-Y5l"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
                                                 <state key="normal" title="Search">
-                                                    <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="titleShadowColor" systemColor="darkTextColor"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="searchPet:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8Ia-uF-PNS"/>
@@ -70,15 +72,37 @@
                                             </button>
                                         </subviews>
                                     </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="wx5-qc-sup">
+                                        <rect key="frame" x="110.5" y="224.5" width="173" height="34"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Age:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g43-zt-HbN">
+                                                <rect key="frame" x="0.0" y="0.0" width="34.5" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="3" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V6T-6M-2W4">
+                                                <rect key="frame" x="44.5" y="0.0" width="37" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="year(s) old" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6hC-U8-IDN">
+                                                <rect key="frame" x="91.5" y="0.0" width="81.5" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lrt-k9-N4s">
-                                        <rect key="frame" x="47" y="216" width="300" height="478"/>
+                                        <rect key="frame" x="47" y="272" width="300" height="422"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="300" id="x2V-DK-TkZ"/>
                                         </constraints>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <color key="tintColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="tintColor" systemColor="systemPurpleColor"/>
                                 <constraints>
                                     <constraint firstItem="YUd-zn-5cT" firstAttribute="leading" secondItem="iL6-mz-XTz" secondAttribute="leading" constant="5" id="1cT-bC-7eX"/>
                                     <constraint firstItem="DqD-wj-EGC" firstAttribute="top" secondItem="YUd-zn-5cT" secondAttribute="bottom" constant="18" id="Afg-4s-rsM"/>
@@ -90,6 +114,7 @@
                                 </constraints>
                             </stackView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.92862637363450473" green="0.98103198784529388" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
@@ -98,12 +123,12 @@
                             <constraint firstItem="iL6-mz-XTz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="abB-nj-jjk"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="iL6-mz-XTz" secondAttribute="bottom" constant="75" id="vu7-zP-kuX"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Pet Adoption" id="Dfl-Vr-7HO"/>
                     <connections>
                         <outlet property="genderSelect" destination="LGS-Nv-kbq" id="IWm-Uo-4PC"/>
                         <outlet property="locationSearchBar" destination="YUd-zn-5cT" id="uCX-6B-ufo"/>
+                        <outlet property="petAge" destination="V6T-6M-2W4" id="mL7-Hs-0sM"/>
                         <outlet property="petPreviewView" destination="lrt-k9-N4s" id="F4F-V9-c1D"/>
                         <outlet property="petType" destination="DqD-wj-EGC" id="nQJ-up-bXJ"/>
                         <segue destination="znT-E7-Gjq" kind="show" identifier="ResultsSegue" id="tBj-k9-NTE"/>
@@ -123,7 +148,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="175" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Knp-la-lSu">
                                 <rect key="frame" x="10" y="98" width="394" height="773"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="6" indentationWidth="0.0" reuseIdentifier="petCell" id="8ni-Ru-kJD" customClass="PetTableViewCell" customModule="PetAdoption" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="394" height="175"/>
@@ -142,9 +167,9 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SvY-Dg-sys">
                                                     <rect key="frame" x="120" y="21" width="225" height="21"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                                    <color key="textColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="textColor" systemColor="systemPurpleColor"/>
                                                     <nil key="highlightedColor"/>
-                                                    <color key="shadowColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                    <color key="shadowColor" systemColor="groupTableViewBackgroundColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Details" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E14-wD-KN9">
                                                     <rect key="frame" x="120" y="52" width="225" height="20.5"/>
@@ -167,7 +192,7 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="E14-wD-KN9" secondAttribute="trailing" constant="10" id="zhi-tE-w2i"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="tintColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" systemColor="systemYellowColor"/>
                                         <connections>
                                             <outlet property="PetDetailLabel" destination="E14-wD-KN9" id="uN8-6e-xXO"/>
                                             <outlet property="petImage" destination="1Mg-l2-XCh" id="GBC-xr-TgI"/>
@@ -183,14 +208,14 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Wip-TW-7W2"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="Knp-la-lSu" secondAttribute="bottom" constant="25" id="2TQ-j2-kUI"/>
                             <constraint firstItem="Wip-TW-7W2" firstAttribute="trailing" secondItem="Knp-la-lSu" secondAttribute="trailing" constant="10" id="DZh-rQ-fRv"/>
                             <constraint firstItem="Knp-la-lSu" firstAttribute="leading" secondItem="Wip-TW-7W2" secondAttribute="leading" constant="10" id="hnk-K6-4Ot"/>
                             <constraint firstItem="Knp-la-lSu" firstAttribute="top" secondItem="Wip-TW-7W2" secondAttribute="top" constant="10" id="tTo-qA-Dxz"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Wip-TW-7W2"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Results" image="star" catalog="system" id="EhZ-NT-joF"/>
                     <navigationItem key="navigationItem" title="Results" id="kIA-vh-s6h"/>
@@ -225,7 +250,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jXu-Gi-NMP">
                                                 <rect key="frame" x="0.0" y="284.5" width="354" height="43"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="36"/>
-                                                <color key="textColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="textColor" systemColor="systemPurpleColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Details" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cEe-Mj-Fqh">
@@ -254,6 +279,7 @@
                                 <viewLayoutGuide key="frameLayoutGuide" id="PsN-cn-Gie"/>
                             </scrollView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="gIF-iu-Mwc"/>
                         <color key="backgroundColor" red="1" green="0.99014486284905479" blue="0.58637209588766692" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="UAm-om-7fR" firstAttribute="trailing" secondItem="2uj-58-ZYC" secondAttribute="trailingMargin" id="JIS-T8-JF0"/>
@@ -261,7 +287,6 @@
                             <constraint firstItem="UAm-om-7fR" firstAttribute="top" secondItem="gIF-iu-Mwc" secondAttribute="top" constant="20" id="tdH-E0-VaF"/>
                             <constraint firstItem="UAm-om-7fR" firstAttribute="leading" secondItem="2uj-58-ZYC" secondAttribute="leadingMargin" id="wXK-SG-RFK"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="gIF-iu-Mwc"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Pet" image="heart" catalog="system" id="O7M-7c-y2J"/>
                     <navigationItem key="navigationItem" title="Details" id="pfg-xb-uOf"/>
@@ -297,10 +322,28 @@
             <point key="canvasLocation" x="1047.8260869565217" y="95.758928571428569"/>
         </scene>
     </scenes>
-    <color key="tintColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+    <color key="tintColor" systemColor="systemPurpleColor"/>
     <resources>
         <image name="heart" catalog="system" width="128" height="109"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="star" catalog="system" width="128" height="116"/>
+        <systemColor name="darkTextColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="groupTableViewBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>
